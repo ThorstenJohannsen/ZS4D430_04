@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_D430_04_07INSERT</CLSNAME>
+    <CLSNAME>ZCL_D430_04_17DISTINCT_158</CLSNAME>
     <LANGU>D</LANGU>
-    <DESCRIPT>Datenbank-Insert</DESCRIPT>
+    <DESCRIPT>Abbildung 154 CDS Parameter</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

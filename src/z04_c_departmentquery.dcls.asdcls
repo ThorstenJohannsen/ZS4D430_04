@@ -1,0 +1,11 @@
+@EndUserText.label: 'Abteilung Zugriffssteuerung Ü 17'
+@MappingRole: true
+define role Z04_C_DEPARTMENTQUERY {
+    grant
+        select
+            on
+                Z04_C_DEPARTMENTQUERY
+                    where
+                        inheriting conditions from entity Z04_R_Department;
+                        
+}

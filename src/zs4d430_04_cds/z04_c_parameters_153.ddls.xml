@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DDLS>
-    <DDLNAME>Z04_C_EMPLOYEEQUERY</DDLNAME>
+    <DDLNAME>Z04_C_PARAMETERS_153</DDLNAME>
     <DDLANGUAGE>D</DDLANGUAGE>
-    <DDTEXT>Mitarbeiter (Assozitation) Übung 12,13,14</DDTEXT>
+    <DDTEXT>Parameters in View View Abb. 153</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DDLS>
-    <DDLNAME>Z04_C_EMPLOYEEQUERY</DDLNAME>
+    <DDLNAME>Z04_C_DEPARTMENTQUERY</DDLNAME>
     <DDLANGUAGE>D</DDLANGUAGE>
-    <DDTEXT>Mitarbeiter (Assozitation) Übung 12,13,14</DDTEXT>
+    <DDTEXT>Übung 16 Aufgabe 1 testen von DISTINC Anweisung</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

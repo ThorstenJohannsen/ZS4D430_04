@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_D430_04_07INSERT</CLSNAME>
+    <CLSNAME>ZCL_S4D430FINALTASK_SELECT_04</CLSNAME>
     <LANGU>D</LANGU>
-    <DESCRIPT>Datenbank-Insert</DESCRIPT>
+    <DESCRIPT>Tabellen füllen</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

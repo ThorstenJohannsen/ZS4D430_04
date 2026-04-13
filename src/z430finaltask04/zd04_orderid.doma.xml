@@ -3,12 +3,12 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DD01V>
-    <DOMNAME>ZD04_CUSTOMERID</DOMNAME>
+    <DOMNAME>ZD04_ORDERID</DOMNAME>
     <DDLANGUAGE>D</DDLANGUAGE>
     <DATATYPE>CHAR</DATATYPE>
     <LENG>000006</LENG>
     <OUTPUTLEN>000006</OUTPUTLEN>
-    <DDTEXT>Domäne CustomerID für Tabelle Customer</DDTEXT>
+    <DDTEXT>Domäne ORDERID für Tabelle CUST_ORDERS</DDTEXT>
     <DOMMASTER>D</DOMMASTER>
    </DD01V>
   </asx:values>
