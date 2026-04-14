@@ -2,9 +2,11 @@
 //@AbapCatalog.viewEnhancementCategory: [#NONE]
 
 @AbapCatalog: { dataMaintenance: #RESTRICTED,
-                viewEnhancementCategory: [ #NONE ] }
+                viewEnhancementCategory: [ #PROJECTION_LIST],
+                extensibility.dataSources: [ 'Employee' ],
+                extensibility.elementSuffix: 'ZEM' } // gleiches Suffix wie in der zugrunde liegenden Tabelle!
                 
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 
 @EndUserText.label: 'Mitarbeiter (Entität) Übung 07/08'
 @Metadata.ignorePropagatedAnnotations: true
@@ -14,9 +16,10 @@
                           sizeCategory: #M }
 
 
-define view entity Z04_R_Employee as select from z04employ
-association [1..1] to Z04_R_DEPARTMENT as _Department
-    on $projection.DepartmentId = _Department.Id
+define view entity Z04_R_Employee 
+    as select from z04employ as Employee
+     association [1..1] to Z04_R_Department as _Department
+     on $projection.DepartmentId = _Department.Id
 {
     key employee_id as EmployeeId,
     first_name as FirstName,

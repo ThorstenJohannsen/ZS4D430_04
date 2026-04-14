@@ -11,7 +11,8 @@
 /* alles hier zwischen ist auskommentiert 
 als gruppe */             
 
-define view entity Z04_C_EMPLOYEE as select from Z04_R_Employee
+define view entity Z04_C_EMPLOYEE 
+    as select from Z04_R_Employee
 {
    key EmployeeId,
    FirstName,

@@ -3,6 +3,7 @@
 {
 "FROM":
 [
+"I_COUNTRY",
 "Z04_R_DEPARTMENT",
 "Z04_R_EMPLOYEE"
 ],

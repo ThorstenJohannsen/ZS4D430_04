@@ -3,7 +3,6 @@
 {
 "FROM":
 [
-"Z04_CUST_ORDERS_R",
 "Z04CUSTOMERS"
 ],
 "ASSOCIATED":

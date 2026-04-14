@@ -1,0 +1,6 @@
+@Metadata.layer: #CORE
+annotate view z04_customers_C_LIST with
+{
+  @EndUserText.label: 'Stadt (META EXT #CORE)'
+  City;
+}

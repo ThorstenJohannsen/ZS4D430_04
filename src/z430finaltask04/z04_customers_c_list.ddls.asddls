@@ -2,6 +2,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'CDS Umsatzliste pro Kunde'
 @Metadata.ignorePropagatedAnnotations: true
+@Metadata.allowExtensions: true
 define view entity z04_customers_C_LIST
 with parameters
 C_id : z04_customerid,
@@ -26,9 +27,11 @@ as select from z04_cust_orders_R(Customs_ID:$parameters.C_id )
                 exchange_rate_date => $parameters.ac_date ) ) as ConvertedAmount,
    
     $parameters.Target_Currency as TargetCurrency,
-     /* Associations */
-    _Customers
+    
+    _Customers.city as City
+//     /* Associations */
+//    _Customers
     
 }
 
-group by Customerid, _Customers.first_name, _Customers.last_name, Currency
+group by Customerid, _Customers.first_name, _Customers.last_name, _Customers.city, Currency

@@ -1,0 +1,11 @@
+@EndUserText.label: 'Authorization View für Z04_CUSTOMERS_R'
+@MappingRole: true
+define role Z04_CUSTOMERS_R {
+    grant 
+        select
+            on
+                Z04_CUSTOMERS_R
+                    where
+                        (Postcode) = aspect pfcg_auth(Z04_PLZ_O, Z04_PLZ, ACTVT = '03');
+                        
+}

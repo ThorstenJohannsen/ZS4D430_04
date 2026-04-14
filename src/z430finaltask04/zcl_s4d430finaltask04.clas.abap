@@ -46,7 +46,7 @@ CLASS zcl_s4d430finaltask04 IMPLEMENTATION.
                              first_name = 'Max'
                              last_name = 'Mustermann'
                              street = 'Globalallee'
-                             city = 'Mümchen'
+                             city = 'München'
                              postcode = '80539' )
                            ).
     out->write( lt_customer ).

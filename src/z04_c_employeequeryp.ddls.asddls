@@ -1,16 +1,20 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST]
+@AbapCatalog.extensibility.dataSources: [ 'Employee' ]
+@AbapCatalog.extensibility.elementSuffix: 'ZEM'
+
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Mitarbeiter (Assozitation) Übung 12'
 @Metadata.ignorePropagatedAnnotations: true
+@Metadata.allowExtensions: true
 define view entity Z04_C_EMPLOYEEQUERYP 
 // Übung 15 Aufgabe 1 die Aufgabe 2 wird in der Klasse gemacht
 with parameters
 p_target_curr : /dmo/currency_code,
-@EndUserText.label: 'Datum der Bewertung'
+
 @Environment.systemField: #USER_DATE // steht nicht in der Übung 15 ist aber so einfacher, da vorbelegt. Das Sternchen am Ende verschwindet!
 p_date : abap.dats
 
-as select from Z04_R_Employee
+as select from Z04_R_Employee as Employee
 {
     key EmployeeId,
     FirstName,
@@ -32,14 +36,14 @@ as select from Z04_R_Employee
     @Semantics.amount.currencyCode: 'CurrencyCode'
     AnnualSalary,
      // Übung 14 Aufgabe 3    
-    @EndUserText.label: 'Monthly Salary'
+    
     @Semantics.amount.currencyCode: 'CurrencyCode'
     cast( ( cast( AnnualSalary as abap.fltp ) / 12.0) as abap.dec( 10, 0 )) as MonthlySalary,
     CurrencyCode,   
       
    
     @Semantics.amount.currencyCode: 'CurrencyCode'
-    @EndUserText.label: 'Annual Salary Converted'
+    
     currency_conversion( amount => AnnualSalary, 
                 source_currency => CurrencyCode,
                 // Übung 15 Parameter einsetzen 
@@ -48,7 +52,7 @@ as select from Z04_R_Employee
        
 //     cast( 'USD' as /dmo/currency_code ) as CurrencyCode_USD,   
     // Übung 14 Aufgabe 3 Ende
-     
+     @Semantics.amount.currencyCode: 'CurrencyCode'
      cast( ( cast( $projection.AnnualSalaryConverted as abap.fltp ) / 12.0) as abap.dec( 10, 0 )) as MonthlySalaryConverted,
      
      $parameters.p_target_curr as CurrencyCodeTarget,   // Übung 15 Aufgabe    
