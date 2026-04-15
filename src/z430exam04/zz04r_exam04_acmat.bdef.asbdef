@@ -1,0 +1,50 @@
+managed implementation in class ZZ04BP_R_EXAM04_ACMAT unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZZ04R_EXAM04_ACMAT alias Stock
+persistent table ZEXAM04_ACMAT
+extensible
+draft table ZZ04EXM04_ACMT_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   Matid;
+
+  field ( readonly )
+   CreatedBy,
+   CreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   Matid;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZEXAM04_ACMAT corresponding extensible
+  {
+    Matid = MATID;
+    FactoryWarehouse = FACTORY_WAREHOUSE;
+    QuantWarehouse = QUANT_WAREHOUSE;
+    UnitMeas = UNIT_MEAS;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+}

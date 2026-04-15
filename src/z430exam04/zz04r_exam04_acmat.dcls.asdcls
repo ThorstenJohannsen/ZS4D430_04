@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZZ04R_EXAM04_ACMAT'
+@MappingRole: true
+define role ZZ04R_EXAM04_ACMAT {
+  grant select on ZZ04R_EXAM04_ACMAT
+  where TRUE;
+}

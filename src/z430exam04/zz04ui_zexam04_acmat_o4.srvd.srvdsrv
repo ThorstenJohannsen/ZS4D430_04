@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service-Definition für ZZ04C_EXAM04_ACMAT'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZZ04C_EXAM04_ACMAT'
+  }
+}
+define service ZZ04UI_ZEXAM04_ACMAT_O4 provider contracts odata_v4_ui {
+  expose ZZ04C_EXAM04_ACMAT as Stock;
+}

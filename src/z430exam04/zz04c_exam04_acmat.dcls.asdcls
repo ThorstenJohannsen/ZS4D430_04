@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZZ04C_EXAM04_ACMAT'
+@MappingRole: true
+define role ZZ04C_EXAM04_ACMAT {
+  grant select on ZZ04C_EXAM04_ACMAT
+  where INHERITING CONDITIONS FROM ENTITY ZZ04R_EXAM04_ACMAT REPLACING { ROOT WITH _BaseEntity };
+}

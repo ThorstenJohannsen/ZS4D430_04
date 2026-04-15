@@ -1,0 +1,10 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP-Objekttyp ZZ04EXAM04_ACMAT",
+    "originalLanguage": "de",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "typeCategory": "businessObject",
+  "name": "Zz04exam04_ACMAT"
+}
