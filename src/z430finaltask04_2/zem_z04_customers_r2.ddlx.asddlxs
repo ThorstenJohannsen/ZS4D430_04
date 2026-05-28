@@ -1,0 +1,9 @@
+@Metadata.layer: #CUSTOMER
+annotate view z04_customers_r2
+    with 
+{
+    @UI.lineItem: [ { position: 60, label: 'Stadt / Ort' } ]
+  @UI.identification: [ { position: 60, label: 'Stadt / Ort' } ]
+  City;
+    
+}

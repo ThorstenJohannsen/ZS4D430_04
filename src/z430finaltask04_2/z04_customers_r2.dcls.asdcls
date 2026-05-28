@@ -1,0 +1,10 @@
+@EndUserText.label: 'Übung 430 Access Control'
+@MappingRole: true
+define role Z04_CUSTOMERS_R2 {
+    grant 
+        select
+            on
+                Z04_CUSTOMERS_R2
+                  where Postcode between '22000' and '22200';
+                        
+}
