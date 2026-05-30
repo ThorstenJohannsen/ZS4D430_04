@@ -1,0 +1,13 @@
+@Metadata.layer: #CORE
+annotate view Z04C_CUST_ORDERS with
+{
+  // Spalten-Layout für die Child-Tabelle auf der Detailseite des Kunden
+  @UI.lineItem: [ { position: 10, importance: #HIGH } ]
+  Orderid;
+
+  @UI.lineItem: [ { position: 20, importance: #HIGH } ]
+  Amount;
+
+  @UI.lineItem: [ { position: 30 } ]
+  Currency;
+}

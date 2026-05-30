@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition Parent-Child'
+define service Z04UI_CUSTOMERS {
+  expose Z04C_CUSTOMERS   as Customer;
+  expose Z04C_CUST_ORDERS as Orders;
+}

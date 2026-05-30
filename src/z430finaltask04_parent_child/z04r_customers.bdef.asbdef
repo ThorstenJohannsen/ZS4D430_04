@@ -1,0 +1,51 @@
+managed implementation in class zbp_04r_customers unique;
+strict ( 2 );
+
+define behavior for Z04R_CUSTOMERS alias Customer
+persistent table z04customers
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) Customerid;
+  association _Orders { create; }
+
+  mapping for z04customers
+  {
+    Customerid = customerid;
+    FirstName  = first_name;
+    LastName   = last_name;
+    City       = city;
+    Street     = street;
+    Postcode   = postcode;
+    ZzemailZem = zzemail_zem;
+    ZzphoneZem = zzphone_zem;
+
+  }
+}
+
+define behavior for Z04R_CUST_ORDERS alias Orders
+persistent table z04cust_orders
+lock dependent by _Customer
+authorization dependent by _Customer
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly )
+    Orderid,
+    Customerid;
+
+  association _Customer;
+
+  mapping for z04cust_orders
+  {
+    Orderid = orderid;
+    Customerid = customerid;
+    Amount = amount;
+    Currency = currency;
+  }
+}

@@ -1,0 +1,19 @@
+projection;
+strict ( 2 );
+
+define behavior for Z04C_CUSTOMERS alias Customer
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Orders { create; }
+}
+
+define behavior for Z04C_CUST_ORDERS alias Orders
+{
+  use update;
+  use delete;
+
+  use association _Customer;
+}

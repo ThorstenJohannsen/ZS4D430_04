@@ -1,0 +1,55 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+    typeName: 'Kunde',
+    typeNamePlural: 'Kunden',
+    title: { type: #STANDARD, value: 'LastName' },
+    description: { value: 'FirstName' }
+  }
+}
+
+annotate view Z04C_CUSTOMERS with
+{
+  // --- LAYOUT-BEREICHE (FACETS) AUF DER DETAILSEITE ---
+  @UI.facet: [
+    { id: 'CustomerDetail', type: #IDENTIFICATION_REFERENCE, label: 'Kundeninformation', position: 10 },
+    // DIESES FACET PROJIZIERT DIE BESTELLUNGEN ALS TABELLE AUF DIE DETAILSEITE:
+    { id: 'OrdersList', type: #LINEITEM_REFERENCE, label: 'Bestellungen', position: 20, targetElement: '_Orders' }
+  ]
+
+  // --- FELDER UND IHRE POSITIONEN ---
+  @UI.lineItem:       [ { position: 10, importance: #HIGH } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.selectionField: [ { position: 10 } ] // Macht das Feld als Filterbar am oberen Rand verfügbar
+  Customerid;
+
+  @UI.lineItem:       [ { position: 20, importance: #HIGH } ]
+  @UI.identification: [ { position: 20 } ]
+  FirstName;
+
+  @UI.lineItem:       [ { position: 30, importance: #HIGH } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.selectionField: [ { position: 20 } ]
+  LastName;
+
+  @UI.lineItem:       [ { position: 40 } ]
+  @UI.identification: [ { position: 40 } ]
+  City;
+  
+  @UI.lineItem:       [ { position: 50 } ]
+  @UI.identification: [ { position: 50 } ]
+  Street;
+  
+  @UI.lineItem:       [ { position: 60 } ]
+  @UI.identification: [ { position: 60 } ]
+  Postcode;
+
+  @UI.lineItem:       [ { position: 70 } ]
+  @UI.identification: [ { position: 70 } ]
+  ZzemailZem; // Deine Erweiterung in der Haupttabelle sichtbar
+
+  @UI.lineItem:       [ { position: 80 } ]
+  @UI.identification: [ { position: 80 } ]
+  ZzphoneZem; // Deine Erweiterung auf der Detailseite sichtbar
+}
