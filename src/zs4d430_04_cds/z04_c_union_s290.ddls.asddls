@@ -17,7 +17,7 @@ group by
  c.last_name,
  c.first_name
 
-union all 
+union
 
 select from /dmo/agency as a 
     inner join /dmo/travel as t 

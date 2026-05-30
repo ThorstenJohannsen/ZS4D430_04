@@ -1,15 +1,5 @@
-class ZZ04BP_C_EXAM04_ACMAT definition
-  public
-  abstract
-  final
-  for behavior of ZZ04C_EXAM04_ACMAT .
-
-public section.
-protected section.
-private section.
+CLASS zz04bp_c_exam04_acmat DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zz04c_exam04_acmat.
 ENDCLASS.
 
-
-
-CLASS ZZ04BP_C_EXAM04_ACMAT IMPLEMENTATION.
+CLASS zz04bp_c_exam04_acmat IMPLEMENTATION.
 ENDCLASS.

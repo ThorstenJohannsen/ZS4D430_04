@@ -1,9 +1,9 @@
-@AccessControl.authorizationCheck: #MANDATORY
+@AccessControl.authorizationCheck: #NOT_ALLOWED
 @Metadata.allowExtensions: true
-@ObjectModel.sapObjectNodeType.name: 'Zz04exam04_ACMAT'
-@EndUserText.label: '###GENERATED Core Data Service Entity'
+//@ObjectModel.sapObjectNodeType.name: 'Zz04RWarehouse'
+@EndUserText.label: 'Core Data Service Entity'
 define root view entity ZZ04R_EXAM04_ACMAT
-  as select from ZEXAM04_ACMAT as Stock
+  as select from zexam04_acmat as Stock
 {
   key matid as Matid,
   factory_warehouse as FactoryWarehouse,

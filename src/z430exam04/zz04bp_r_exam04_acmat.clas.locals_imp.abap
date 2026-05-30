@@ -1,13 +1,19 @@
-CLASS LHC_ZZ04R_EXAM04_ACMAT DEFINITION INHERITING FROM CL_ABAP_BEHAVIOR_HANDLER.
+CLASS lhc_Stock DEFINITION INHERITING FROM cl_abap_behavior_handler.
   PRIVATE SECTION.
-    METHODS:
-      GET_GLOBAL_AUTHORIZATIONS FOR GLOBAL AUTHORIZATION
-        IMPORTING
-           REQUEST requested_authorizations FOR Stock
-        RESULT result.
+
+    " Name korrigiert: 'global_authorization' statt 'get_global_authorizations'
+    METHODS global_authorization FOR GLOBAL AUTHORIZATION
+      IMPORTING REQUEST requested_authorizations FOR Stock RESULT result.
+
 ENDCLASS.
 
-CLASS LHC_ZZ04R_EXAM04_ACMAT IMPLEMENTATION.
-  METHOD GET_GLOBAL_AUTHORIZATIONS.
+CLASS lhc_Stock IMPLEMENTATION.
+
+  METHOD global_authorization.
+    " Simpler Freipass für die Prüfung: Erlaubt das Erstellen, Ändern und Löschen
+    result-%create = if_abap_behv=>auth-allowed.
+    result-%update = if_abap_behv=>auth-allowed.
+    result-%delete = if_abap_behv=>auth-allowed.
   ENDMETHOD.
+
 ENDCLASS.

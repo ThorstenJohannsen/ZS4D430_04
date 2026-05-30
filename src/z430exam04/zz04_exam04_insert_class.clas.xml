@@ -3,15 +3,13 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZZ04BP_C_EXAM04_ACMAT</CLSNAME>
+    <CLSNAME>ZZ04_EXAM04_INSERT_CLASS</CLSNAME>
     <LANGU>D</LANGU>
-    <DESCRIPT>Behavior Implementation for ZZ04C_EXAM04_ACMAT</DESCRIPT>
-    <CATEGORY>06</CATEGORY>
+    <DESCRIPT>Klasse zum einfügen von Daten</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
-    <CLSDEFINT>ZZ04C_EXAM04_ACMAT</CLSDEFINT>
    </VSEOCLASS>
   </asx:values>
  </asx:abap>

@@ -1,49 +1,45 @@
 @Metadata.allowExtensions: true
 @Metadata.ignorePropagatedAnnotations: true
-@Endusertext: {
-  Label: '###GENERATED Core Data Service Entity'
-}
-@Objectmodel: {
-  Sapobjectnodetype.Name: 'Zz04exam04_ACMAT'
-}
-@AccessControl.authorizationCheck: #MANDATORY
+@EndUserText: {  label: 'Warehouse' }
+//@ObjectModel: { sapObjectNodeType.name: 'Zz04exam04_ACMAT view' }
+@AccessControl.authorizationCheck: #NOT_ALLOWED
 define root view entity ZZ04C_EXAM04_ACMAT
-  provider contract TRANSACTIONAL_QUERY
+  provider contract transactional_query
   as projection on ZZ04R_EXAM04_ACMAT
-  association [1..1] to ZZ04R_EXAM04_ACMAT as _BaseEntity on $projection.MATID = _BaseEntity.MATID
+  association [1..1] to ZZ04R_EXAM04_ACMAT as _BaseEntity on $projection.Matid = _BaseEntity.Matid
 {
   key Matid,
   FactoryWarehouse,
   @Semantics: {
-    Quantity.Unitofmeasure: 'UnitMeas'
+    quantity.unitOfMeasure: 'UnitMeas'
   }
   QuantWarehouse,
   @Consumption: {
-    Valuehelpdefinition: [ {
-      Entity.Element: 'UnitOfMeasure', 
-      Entity.Name: 'I_UnitOfMeasureStdVH', 
-      Useforvalidation: true
+    valueHelpDefinition: [ {
+      entity.element: 'UnitOfMeasure', 
+      entity.name: 'I_UnitOfMeasureStdVH', 
+      useForValidation: true
     } ]
   }
   UnitMeas,
   @Semantics: {
-    User.Createdby: true
+    user.createdBy: true
   }
   CreatedBy,
   @Semantics: {
-    Systemdatetime.Createdat: true
+    systemDateTime.createdAt: true
   }
   CreatedAt,
   @Semantics: {
-    User.Localinstancelastchangedby: true
+    user.localInstanceLastChangedBy: true
   }
   LocalLastChangedBy,
   @Semantics: {
-    Systemdatetime.Localinstancelastchangedat: true
+    systemDateTime.localInstanceLastChangedAt: true
   }
   LocalLastChangedAt,
   @Semantics: {
-    Systemdatetime.Lastchangedat: true
+    systemDateTime.lastChangedAt: true
   }
   LastChangedAt,
   _BaseEntity

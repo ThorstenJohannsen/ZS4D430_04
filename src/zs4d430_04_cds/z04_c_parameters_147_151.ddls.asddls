@@ -31,6 +31,8 @@ as select from /DMO/I_Flight
         when 'X' then MaximumSeats - OccupiedSeats
         else OccupiedSeats
     end as Seats,
+    OccupiedSeats as OccSeats,
+    MaximumSeats as MaxSeats,
     // Verwendung Parameter 3 in Funktion
     @Semantics.amount.currencyCode: 'TargetCurrency'    
     currency_conversion( amount => Price, 
