@@ -1,0 +1,11 @@
+extension implementation in class zbp_04r_customers_ext unique;
+
+extend behavior for Customer
+{
+  extend mapping for z04customers
+  {
+    ZzemailZem = zzemail_zem;
+    ZzphoneZem = zzphone_zem;
+  }
+
+}

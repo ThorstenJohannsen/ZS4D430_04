@@ -1,13 +1,29 @@
 @Metadata.layer: #CORE
 annotate view Z04C_CUST_ORDERS with
 {
-  // Spalten-Layout für die Child-Tabelle auf der Detailseite des Kunden
-  @UI.lineItem: [ { position: 10, importance: #HIGH } ]
+  // --- DIESER BLOCK FEHLTE: Definiert den Inhaltsbereich für die Bestellungs-Detailseite ---
+  @UI.facet: [
+    {
+      id:              'OrderGeneralInfo',
+      type:            #IDENTIFICATION_REFERENCE,
+      label:           'Bestellungsdetails',
+      position:        10
+    }
+  ]
+
+  // --- Spalten in der Tabelle UND Felder auf der Detailseite ---
+  @UI.lineItem:       [ { position: 10, importance: #HIGH } ]
+  @UI.identification: [ { position: 10 } ] // Macht das Feld auf der Detailseite sichtbar
   Orderid;
 
-  @UI.lineItem: [ { position: 20, importance: #HIGH } ]
+  @UI.identification: [ { position: 20 } ]
+  Customerid;
+
+  @UI.lineItem:       [ { position: 20, importance: #HIGH } ]
+  @UI.identification: [ { position: 30 } ]
   Amount;
 
-  @UI.lineItem: [ { position: 30 } ]
+  @UI.lineItem:       [ { position: 30 } ]
+  @UI.identification: [ { position: 40 } ]
   Currency;
 }
